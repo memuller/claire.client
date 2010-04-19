@@ -4,12 +4,14 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "claire.client"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.name = "Claire.client"
+    gem.summary = "A ruby client for St. Claire."
+    gem.description = "This gem is a Ruby client for the St. Claire Media Server, which power power Canção Nova's reach of video and streamming web services."
     gem.email = "hello@memuller.com"
     gem.homepage = "http://github.com/memuller/claire.client"
     gem.authors = ["Matheus E. Muller"]
+		gem.add_dependency "active_support", ">= 2.3.5"
+		gem.add_dependency "hashie", ">= 0.2.0"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
