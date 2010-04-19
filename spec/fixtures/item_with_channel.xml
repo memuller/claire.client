@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  <title>test</title>
+  <description></description>
+  <header>/public/categories/4bb48ef61637fd69c1000005/original.jpg</header>
+  <num_items>1</num_items>
+  <link>http://localhost:3000/categories/4bb48ef61637fd69c1000005</link>
+  <item>
+    <title>new title</title>
+    <link>http://localhost:3000/videos/4bbced401637fd736a000004</link>
+    <media:content type="video/flv" duration="" url="/videos/4bbced401637fd736a000004/flv-h263.flv"/>
+    <media:content type="video/flv" duration="" url="/videos/4bbced401637fd736a000004/flv-h264.flv"/>
+    <media:thumbnail heigth="50" width="50" url="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg"/>
+    <media:thumbnail heigth="120" width="215" url="/videos/4bbced401637fd736a000004/thumb_thumb_medium.jpg"/>
+    <media:thumbnail heigth="281" width="500" url="/videos/4bbced401637fd736a000004/thumb_thumb_large.jpg"/>
+    <media:category label="testting"/>
+    <media:keywords></media:keywords>
+    <media:description>asa</media:description>
+    <media:community>
+      <media:starRating average="0.0"/>
+      <media:statistics views="0"/>
+    </media:community>
+    <related>
+      <item thumbnail="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg" title="new title" link="http://localhost:3000/videos/4bbced401637fd736a000004"/>
+    </related>
+  </item>
+  <item>
+    <title>new title 2</title>
+    <link>http://localhost:3000/videos/4bbced401637fd736a000004</link>
+    <media:content type="video/flv" duration="" url="/videos/4bbced401637fd736a000004/flv-h263.flv"/>
+    <media:content type="video/flv" duration="" url="/videos/4bbced401637fd736a000004/flv-h264.flv"/>
+    <media:thumbnail heigth="50" width="50" url="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg"/>
+    <media:thumbnail heigth="120" width="215" url="/videos/4bbced401637fd736a000004/thumb_thumb_medium.jpg"/>
+    <media:thumbnail heigth="281" width="500" url="/videos/4bbced401637fd736a000004/thumb_thumb_large.jpg"/>
+    <media:category label="testting"/>
+    <media:keywords></media:keywords>
+    <media:description>asa</media:description>
+    <media:community>
+      <media:starRating average="0.0"/>
+      <media:statistics views="0"/>
+    </media:community>
+    <related>
+      <item thumbnail="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg" title="new title" link="http://localhost:3000/videos/4bbced401637fd736a000004"/>
+    </related>
+  </item>
+  <atom:link rel="next" href="http://localhost:3000/categories/4bb48ef61637fd69c1000005.xml?page=2"/>
+</channel>
+
+
+</rss>

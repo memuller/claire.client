@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss" xmlns:atom="http://www.w3.org/2005/Atom">
+<item>
+  <title>new title</title>
+  <link>http://localhost:3000/videos/4bbced401637fd736a000004</link>
+  <media:content type="video/flv" url="/videos/4bbced401637fd736a000004/flv-h263.flv" duration=""/>
+  <media:content type="video/flv" url="/videos/4bbced401637fd736a000004/flv-h264.flv" duration=""/>
+  <media:thumbnail width="215" url="/videos/4bbced401637fd736a000004/thumb_thumb_medium.jpg" heigth="120"/>
+  <media:thumbnail width="50" url="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg" heigth="50"/>
+  <media:thumbnail width="500" url="/videos/4bbced401637fd736a000004/thumb_thumb_large.jpg" heigth="281"/>
+  <media:category label="test"/>
+  <media:keywords>many, keywords, here</media:keywords>
+  <media:description>asa</media:description>
+  <media:community>
+    <media:starRating average="0.0"/>
+    <media:statistics views="0"/>
+  </media:community>
+  <related>
+    <item title="new title" link="http://localhost:3000/videos/4bbced401637fd736a000004" thumbnail="/videos/4bbced401637fd736a000004/thumb_thumb_square.jpg"/>
+  </related>
+</item>
+</rss>
