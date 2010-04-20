@@ -2,10 +2,15 @@
 #%w(rubygems mongo mongo_mapper memcache yaml activesupport json).each{|lib| require lib}
 
 #loads every ruby file inside those folders
-	full_dir = File.expand_path(File.join(File.dirname(__FILE__), 'claire_client'))
-  Dir.new(full_dir).entries.each do |file|
-      load [full_dir, file]*'/' if file.include? '.rb'
-  end
+full_dir = File.expand_path(File.join(File.dirname(__FILE__), 'claire_client'))
+%w(item list listable category video stream).each do |lib|
+	load "#{full_dir}/#{lib}.rb"
+end
+
+	# 
+	#   Dir.new(full_dir).entries.each do |file|
+	#       load [full_dir, file]*'/' if file.include? '.rb'
+	#   end
 
 #main module here.
 module Claire
@@ -54,10 +59,9 @@ module Claire
 			return request.read if request.status.first.to_i == 200
 			nil
 		rescue Exception => e
-			case e
-			when Net::HTTP::TimeoutError
-				
-			end					
+			
+			
+			raise 		
 		end
 		
 		
