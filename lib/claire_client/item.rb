@@ -6,7 +6,7 @@ module Claire
 			
     	def initialize arg
     		if arg.is_a? String
-    			file = Claire::Client.get(arg)
+    			file = Claire::Client.get("#{self.class.base_url}/#{arg}")
 					if Claire::Client.format == 'xml'
 						hash = Hashie::Mash.new(Hashie::Mash.from_xml(file))
 					else
@@ -67,7 +67,7 @@ module Claire
 					if defined? @@base_url
 						return @@base_url unless @@base_url.nil?
 					end															
-					self.to_s.downcase.pluralize					
+					self.to_s.downcase.pluralize.split('::').last					
 				end
 			  
 				# Manually set this class base URI on the server. 
