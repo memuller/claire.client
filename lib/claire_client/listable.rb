@@ -5,8 +5,17 @@ module Claire
 			module ClassMethods
 				
 				# Returns a Claire::List on its base_url.
-				def all					
-					List.new(self.base_url)					
+				# if passed a block, gets the list, them applies a local 
+				# filter to the received items, returning an Array.				
+				def all &block					
+					list = List.new(self.base_url)
+					return list unless block
+					items = []					
+					list.each do |item|
+						items << item if yield(item)						
+					end
+					items		
+										
 				end
 				
 			end
