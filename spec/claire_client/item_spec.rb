@@ -25,6 +25,17 @@ describe Claire::Client::Item do
 				Video.base_url = nil
 				Video.base_url.should == "videos"
 			end
+			
+			it "if the class is in a module, it should get the class name only" do
+				eval %(
+					module Testing
+						class Video
+							include Claire::Client::Item
+						end
+					end
+				)
+				Testing::Video.base_url.should == "videos"
+			end
 		end
 		
 		context "upon receiving a Hash" do
@@ -73,10 +84,10 @@ describe Claire::Client::Item do
 		end
 		
 		context "upon receiving a String" do
-			before { @video = Video.new 'videos/id' }
+			before { @video = Video.new 'id' }
 			it "should open the given string" do
 				lambda { Video.new "" }.should raise_error
-				lambda { Video.new "videos/id" }.should_not raise_error
+				lambda { Video.new "id" }.should_not raise_error
 			end
 			it "should parse the result using the XML parsing rules" do
 				@video.title.should be_a_kind_of String 

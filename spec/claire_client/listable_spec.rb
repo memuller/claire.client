@@ -18,7 +18,7 @@ describe Claire::Client::Listable do
 					include Claire::Client::Listable
 				end
 			") }.should raise_error Claire::Error
-			lambda { Video.new('videos/id')}.should_not raise_error
+			lambda { Video.new('id')}.should_not raise_error
 		end				
 	end
 	
@@ -38,6 +38,11 @@ describe Claire::Client::Listable do
 	
 	it "should have a list of its children" do
 	  Claire::Client::Listable.children.include?(Video).should be_true
+	end
+	
+	it "should accept a block filter" do
+		Video.all { |video| video.title }.should_not be_empty
+		Video.all { |video| video.title == ''}.should be_empty
 	end
 	
 
