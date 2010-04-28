@@ -14,8 +14,10 @@ module Claire
 				@document = @document.channel if @document.channel				
 				if @document.item.nil?
 					@items = []
-				else
+				elsif @document.item.is_a? Array
 					@items = @document.item
+				else					
+					@items = [@document.item]
 				end
 				build_items											
 			end						

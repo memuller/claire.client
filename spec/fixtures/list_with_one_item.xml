@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <item>
+    <title>test</title>
+    <link>http://localhost:3000/categories/4bb48ef61637fd69c1000005</link>
+    <num_videos>1</num_videos>
+  </item>
+
+</rss>

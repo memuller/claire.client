@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Claire::Client::List do
 
-	before do
+	before :each do
 		Claire::Client.stub(:get).with('categories').and_return(xml(:item_with_channel))		
 	  @list = Claire::Client::List.new('categories')
 	end
@@ -49,6 +49,12 @@ describe Claire::Client::List do
 		
 		it "the returned objects should be set as partial" do
 			@list.each { |item| item.should be_partial } 
+		end
+		
+		it "should work normally even when the list has only one item" do
+			Claire::Client.stub(:get).with('categories').and_return(xml(:list_with_one_item))		
+		  @list = Claire::Client::List.new('categories')
+			@list.each.size.should be 1
 		end									
 	end
 	
