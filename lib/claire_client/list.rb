@@ -15,7 +15,7 @@ module Claire
 				if @document.item.nil?
 					@items = []
 				else
-					@items = document.item
+					@items = @document.item
 				end
 				build_items											
 			end						
