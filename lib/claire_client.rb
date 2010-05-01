@@ -15,7 +15,7 @@ end
 #main module here.
 module Claire
 	module Client
-		%w(rubygems open-uri active_support hashie).each { |lib| require lib }
+		%w(rubygems active_support hashie).each { |lib| require lib }
 		@@hostname = "localhost:3000"
 		@@api_key = "33c80d2e38e6b1753982500721f76eccaee0d111"
 		@@format = 'xml'
@@ -41,13 +41,14 @@ module Claire
 		
 		# assembles an URL from an string of params.
 		def self.assemble_url url="", params={}
-			url = "http://#{@@hostname}/#{url}"			
+			url = "http://#{@@hostname}/#{url}"		
 			url += ".#{@@format.downcase}" if @@format			
 			uri = URI.parse url			
 			(uri.query ||= "") << "api_key=#{@@api_key}"
 			params.each do |k,v|
 				uri.query << "&#{k}=#{v}"
 			end
+			puts uri
 			uri
 			
 		end
@@ -55,12 +56,9 @@ module Claire
 		# gets an URL. Assembles it first.
 		def self.get url=''
 			url = assemble_url(url)
-			request = open(url)
-			return request.read if request.status.first.to_i == 200
-			nil
-		rescue Exception => e
-			
-			
+			request = Net::HTTP.get_response url			           
+			return request.body if request.is_a? Net::HTTPSuccess			
+		rescue Exception => e						
 			raise 		
 		end
 		
