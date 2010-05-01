@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{claire_client}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matheus E. Muller"]
-  s.date = %q{2010-04-28}
+  s.date = %q{2010-05-01}
   s.description = %q{This gem is a Ruby client for the St. Claire Media Server, which power power Canção Nova's reach of video and streamming web services.}
   s.email = %q{hello@memuller.com}
   s.extra_rdoc_files = [
