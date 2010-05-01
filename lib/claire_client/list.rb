@@ -6,8 +6,7 @@ module Claire
 			attr_reader :body, :document
 						
 			# gets, parses, and builds objects.
-			def initialize(arg)
-				#puts Claire::Client.respond_to? :get				
+			def initialize(arg, klass=nil)								
 				@body = Claire::Client.get(arg)
 				@document = Hashie::Mash.new(Hashie::Mash.from_xml(@body))
 				@document = @document.rss if @document.rss
@@ -19,6 +18,7 @@ module Claire
 				else					
 					@items = [@document.item]
 				end
+				@klass = klass
 				build_items											
 			end						
 			
@@ -42,7 +42,11 @@ module Claire
 						then item.link
 						else item.link.first
 					end
-					klass = ("Claire::Client::" + link.split('/')[-2].classify).constantize
+					if @klass
+						klass = @klass.is_a?(String) ? @klass.constantize : @klass
+					else
+						klass = ("Claire::Client::" + link.split('/')[-2].classify).constantize
+					end
 					obj = klass.new(item)
 					(@objects||=[]) << obj 																		
 					

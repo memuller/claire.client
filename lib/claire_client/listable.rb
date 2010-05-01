@@ -8,7 +8,7 @@ module Claire
 				# if passed a block, gets the list, them applies a local 
 				# filter to the received items, returning an Array.				
 				def all &block					
-					list = List.new(self.base_url)
+					list = List.new(self.base_url, self)
 					return list unless block
 					items = []					
 					list.each do |item|

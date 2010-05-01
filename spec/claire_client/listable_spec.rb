@@ -30,6 +30,11 @@ describe Claire::Client::Listable do
 		it "should return a Claire::List on the item's base URL" do
 		  Video.all.should be_a_kind_of Claire::Client::List
 		end
+		
+		it "should be able to specify the class of the resulting listed items" do
+			Video.all.each{ |v| v.should_not be_a_kind_of Claire::Client::Video }
+			Video.all.each{ |v| v.should be_a_kind_of Video }
+		end
 	end
 	
 	it "delegate a count property to its all method" # do
